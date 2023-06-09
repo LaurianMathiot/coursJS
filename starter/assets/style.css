@@ -1,0 +1,29 @@
+*, ::after, ::before {
+    list-style-type: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Lato Regular";
+    src: url(../assets/lato/Lato-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Lato Bold";
+    src: url(../assets/lato/Lato-Bold.ttf);
+}
+
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Lato Regular";
+    background: linear-gradient(-60deg, #011627, #00eabf);
+    color: white;
+}
