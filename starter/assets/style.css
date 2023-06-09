@@ -16,7 +16,6 @@
     src: url(../assets/lato/Lato-Bold.ttf);
 }
 
-
 .main-container {
     width: 100vw;
     height: 100vh;
@@ -24,6 +23,20 @@
     justify-content: center;
     align-items: center;
     font-family: "Lato Regular";
-    background: linear-gradient(-60deg, #011627, #00eabf);
     color: white;
+    background: linear-gradient(300deg, #ee7752, #e73c7e, #011627, #00eabf);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;   
 }
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
