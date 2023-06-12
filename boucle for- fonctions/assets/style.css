@@ -1,0 +1,42 @@
+*, ::after, ::before {
+    list-style-type: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Lato Regular";
+    src: url(../assets/lato/Lato-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Lato Bold";
+    src: url(../assets/lato/Lato-Bold.ttf);
+}
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Lato Regular";
+    color: white;
+    background: linear-gradient(300deg, #ee7752, #e73c7e, #011627, #00eabf);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;   
+}
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
