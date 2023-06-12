@@ -1,116 +1,89 @@
-// document.querySelector <- trouvez qqc 
+logMessage(`Salut`)
+logMessage(`tout`)
+logMessage(`le monde`)
 
-const myText = document.querySelector(".main-container")
-
-const firstPart = `Je m'appelle`
-const firstname = `Laurian`
-const age = 31
-const brotherAge = 35
-
-let result = `${firstPart} ${firstname} et j'ai ${age} ans.`
-    // ou let result = firstPart + ` ` + firstname
-
-const myArray = ['Paul', 'Pierre', 'Nathalie', 'Mathilde']
-    // Afficher le dernier élément du tableau : myText.textContent = myArray[myArray.length - 1]
-
-const identity_1 = {
-    firstname: 'Laurian',
-    lastname: 'Mathiot',
-    age: 35,
-    weight: 74,
-    town: {name: 'Bordeaux', population :2000000},
-    size: 1.70
+function logMessage(arg) {
+    console.log(arg)
 }
 
-const identity_2 = {
-    firstname: 'Joe',
-    lastname: 'Dalton',
-    age: 27,
-    weight: 20,
-    town: {name: 'Mexico', population :10000000},
-    size: 1.20
+
+// -------------------------------------------------------------------------------
+
+
+let valeurRetournee = sum2args(4, 7)
+
+valeurRetournee += ` Coucou c'est nous`
+
+console.log(valeurRetournee)
+
+function sum2args(arg1, arg2) {
+    const result = `La somme de ${arg1} et de ${arg2} est égale à ${arg1 + arg2}.`
+    return result
 }
 
-// let olderIdentity, youngerIdentity; 
+
+// -------------------------------------------------------------------------------
 
 
-// if (identity_1.age > identity_2.age) {
-//     olderIdentity = identity_1
-//     youngerIdentity = identity_2
-// } else {
-//     olderIdentity = identity_2
-//     youngerIdentity = identity_1
-    
-// }
+let sum = sum2args(80, 20)
+let sus = sus2args(sum, 50)
+let result = resultat(sus)
 
-// // myText.textContent = `M. ${olderIdentity.lastname} est le plus agé car il a ${olderIdentity.age - youngerIdentity.age} ans de plus que M.${youngerIdentity.lastname}.`
+console.log(result)
 
-
-
-// let bigCity, smallCity;
-
-// if ((identity_1.town.population)>(identity_2.town.population)) {
-//     bigCity = identity_1
-//     smallCity = identity_2
-// } else {
-//     bigCity = identity_2
-//     smallCity = identity_1
-// }
-
-// myText.textContent = `M. ${bigCity.lastname} habite ${bigCity.town.name} qui est plus grande que ${smallCity.town.name}.`
-
-// Calcul IMC : weight / size ** 2
-
-// identity_1.imc = identity_1.weight / (identity_1.size ** 2)
-// identity_2.imc = identity_2.weight / (identity_2.size ** 2)
-
-// let highImc, lowImc
-
-// if (identity_1.imc > identity_2.imc) {
-//     highImc = identity_1
-//     lowImc = identity_2
-// } else {
-//     highImc = identity_2
-//     lowImc = identity_1
-// }
-
-// myText.textContent = `${highImc.firstname} à l'IMC la plus élevée : ${highImc.imc}`
-
-
-// function calculIMC(person) {
-//     const imc = person.weight / person.size ** 2
-//     return imc;
-// }
-
-const ville1 = {
-    nom : 'Bordeaux',
-    superficy : 100,
-    population : 3,
+function sum2args(sum1, sum2) {
+    return sum1 + sum2
 }
 
-const ville2 = {
-    nom : 'Pessac',
-    superficy : 200,
-    population : 3,
+function sus2args(sus1, sus2) {
+    return sus1 - sus2
 }
 
-calculdensity(ville1)
-calculdensity(ville2)
-
-let densedCity
-let spreadCity
-
-if(ville1.density > ville2.density) {
-    densedCity = ville1
-    spreadCity = ville2
-} else {
-    densedCity = ville2
-    spreadCity = ville1
+function resultat(res) {
+    const result = `Le résultat des 2 fonctions est ${res}`
+    return result
 }
 
-myText.textContent = `${densedCity.nom} à une plus grande densité que ${spreadCity.nom} avec ${densedCity.density}.`
 
-function calculdensity(city) {
-    let result =  Math.round(city.superficy / city.population)
-    city.density = result
+// -------------------------------------------------------------------------------
+
+
+for(let i = 0; i <= 10; i ++) {
+        console.log(`Mon indice de boucle est ${i}`)
+}
+
+console.log(`La boucle est terminée`)
+
+
+// -------------------------------------------------------------------------------
+
+
+const myNumbers = [20, 40, 10, 30]
+
+const result1 = sumElements(myNumbers)
+
+console.log(`La somme des éléments du tableau est ${result1}`)
+
+function sumElements(array) {
+    let myResult = 0
+    for(i = 0; i < array.length; i++) {
+        myResult += array[i]
+    }
+    return myResult
+}
+
+// -------------------------------------------------------------------------------
+
+const myNumbers2 = [30, 43, 10, 33]
+
+const result2 = sumElements(myNumbers2)
+
+console.log(`La somme des éléments paires du tableau est ${result2}`)
+
+function sumElements(array) {
+    let myResult2 = 0
+        for(i = 0; i < array.length; i++) {
+            if(array[i] %2 === 0) myResult2 += array[i]  
+        }
+        return myResult2
 }
