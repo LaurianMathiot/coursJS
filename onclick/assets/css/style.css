@@ -1,0 +1,64 @@
+@font-face {
+    font-family: "Lato Regular";
+    src: url(../fonts/lato/Lato-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Lato Bold";
+    src: url(../fonts/lato/Lato-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Lato Light";
+    src: url(../fonts/lato/Lato-Light.ttf);
+}
+
+*,::after, ::before {
+    list-style-type: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    font-family: "Lato Regular";
+    box-sizing: border-box;
+    user-select: none;
+}
+
+@media screen and (max-width: 100px) {
+    
+}
+
+/*  */
+
+body {
+    background: linear-gradient(-60deg, rgb(198, 198, 198), rgb(255, 255, 255));
+}
+
+.main-container {
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-btn, input {
+    cursor: pointer;
+    /* background: linear-gradient(80deg, rgb(212, 212, 212), rgb(255, 255, 255)); */
+    color: rgb(84, 84, 84);
+    border-radius: 100px;
+    padding: 15px 30px;
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.164), -2px -2px 7px rgb(255, 255, 255),  inset 1px 1px 3px rgba(0, 0, 0, 0.164), inset -1px -1px 5px rgb(255, 255, 255);
+    transition: all 0.2s ease-in;
+    margin: 0 20px;
+    
+}
+
+.input {
+    border: 0;
+}
+
+.main-btn:hover {
+    color: rgb(255, 255, 255);
+    background: linear-gradient(-60deg, rgb(0, 170, 217), rgb(69, 214, 254));
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.164), -2px -2px 7px rgb(255, 255, 255),  inset 1px 1px 3px rgba(0, 0, 0, 0.128), inset -1px -1px 3px rgba(0, 0, 0, 0.132);
+}
