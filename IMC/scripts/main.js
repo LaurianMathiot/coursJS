@@ -1,4 +1,4 @@
-// poids / taille^2
+// IMC = poids / taille^2
 
 const mainBtn = document.querySelector(".main-btn")
 const weight = document.querySelector(".weight")
@@ -23,10 +23,13 @@ function onClick(event) {
     personIMC = (weight.value / ((height.value/100) ** 2))
     result.textContent = personIMC.toFixed(1)
 
+
     for(i = 0; i < BMIData.length; i++) {
         if(personIMC > BMIData[i].range[0] && personIMC <= BMIData[i].range[1] || personIMC > BMIData[BMIData.length -1].range) {
             
             comment.textContent = BMIData[i].name
+            result.style.color = BMIData[i].color
+            
         }
     
     }
