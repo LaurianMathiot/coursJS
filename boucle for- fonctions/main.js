@@ -264,12 +264,64 @@ function priceAvg(arr) {
 console.log(getIngredientsByPizzaName('Montagnarde', pizzas))
 
 function getIngredientsByPizzaName(name, arr) {
-    let ingredients = []
+    
+    let targetPizza
 
     for(i = 0; i < arr.length; i++) {
-        if (name===arr[i].name) {
-            ingredients.push(arr[i].ingredients)
+        if (name === arr[i].name) {
+            targetPizza = arr[i]
+            break
         }
     }
+
+    let ingredients = []
+
+    if (targetPizza) {
+        ingredients = targetPizza.ingredients
+    }
+
     return ingredients
 }
+
+// tableau avec tous les ingrédients mais sans les doublons
+const result6 = getAllIngredients(pizzas)
+console.log(result6)
+
+function getAllIngredients(arr) {
+
+    let allIngredients = []
+
+    for(i = 0; i < arr.length; i++) {
+        const currentPizza = arr[i]
+        for(let j = 0; j < currentPizza.ingredients.length; j++) {
+            if(!allIngredients.includes(currentPizza.ingredients[j])) {
+                allIngredients.push(currentPizza.ingredients[j])   
+            }
+        }
+    }
+
+    return allIngredients
+
+}
+
+// tableau avec les noms des pizzas qui ont un ingrédient spécifique
+
+const result7 = pizzasWithThisIngredient(pizzas, 'tomate')
+console.log(result7)
+
+function pizzasWithThisIngredient(arr, ingredientName) {
+
+    let pizzasNames = []
+    
+    for(i = 0; i < arr.length; i++) {
+    
+        const currentPizza = arr[i]
+        if (currentPizza.ingredients.includes(ingredientName)) {
+            pizzasNames.push(currentPizza.name)
+        }
+    }
+
+    return pizzasNames
+    
+}
+  
