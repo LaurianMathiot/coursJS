@@ -1,0 +1,160 @@
+@font-face {
+    font-family: "Lato Regular";
+    src: url(../fonts/lato/Lato-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Lato Bold";
+    src: url(../fonts/lato/Lato-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Lato Light";
+    src: url(../fonts/lato/Lato-Light.ttf);
+}
+
+*,::after, ::before {
+    list-style-type: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    font-family: "Lato Regular";
+    box-sizing: border-box;
+    user-select: none;
+}
+
+/*  */
+
+body {
+    background-color: #011627;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(300deg, #ee7752, #e73c7e, #011627, #00eabf);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;  
+}
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+.main-container {
+    background: linear-gradient(-60deg, rgb(198, 198, 198), rgb(255, 255, 255));
+    width: 700px;
+    height: 60vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 30px;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.374);
+    position: relative;
+}
+
+h1 {
+    font-family: "Lato Bold";
+    position: relative;
+}
+
+h1 span {
+    font-family: "Lato Light" !important;
+}
+
+h1::after {
+    content: "";
+    height: 1px;
+    width: 110px;
+    border-bottom: 2px solid rgb(0, 170, 217);
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+  }
+
+strong {
+    font-family: "Lato Bold";
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10vh 0;
+}
+
+.label {
+    display: inline;
+}
+
+
+.input {
+    cursor: pointer;
+    color: rgb(84, 84, 84);
+    border-radius: 100px;
+    padding: 15px 30px;
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.164), -2px -2px 7px rgb(255, 255, 255),  inset 1px 1px 3px rgba(0, 0, 0, 0.164), inset -1px -1px 5px rgb(255, 255, 255);
+    margin: 0 20px;
+    border: 0;
+    margin-top: 2vh;
+    background-color:rgba(84, 84, 84, 0);
+    
+}
+
+.btn-container {
+    margin: 0 0 16vh 0;
+}
+
+.main-btn {
+    color: rgb(255, 255, 255);
+    border-radius: 100px;
+    padding: 15px 30px;
+    background: linear-gradient(60deg, rgb(0, 170, 217), rgb(69, 214, 254));
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.164), -2px -2px 7px rgb(255, 255, 255),  inset 1px 1px 3px rgba(0, 0, 0, 0.128), inset -1px -1px 3px rgba(0, 0, 0, 0.132);
+    transition: all 0.2s ease-in-out;
+}
+
+.main-btn:hover {
+    background: linear-gradient(60deg, #e73c7e, #ee7752)
+}
+
+.result {
+    margin-bottom: 2vh;
+    font-size: 2.5rem;
+    font-family: "Lato Bold";
+}
+
+.feedback {
+    background: linear-gradient(-120deg, rgb(255, 255, 255), rgb(198, 198, 198));
+    width: 250px;
+    align-self: center;
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.164);
+    position: absolute;
+    bottom: -50px;
+
+}
+
+
+@media screen and (max-width: 850px) {
+
+    .main-container {
+        height: 80vh;
+        width: 70vw;
+    }
+
+    .input-container {
+        flex-direction: column;
+        gap: 5vh
+    }
+
+}

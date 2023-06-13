@@ -1,46 +1,35 @@
-// const mainBtn = document.querySelectorAll(".main-btn")
-const mainBtns = document.querySelectorAll(".main-btn")
-const mainContainers = document.querySelectorAll(".main-container")
+// poids / taille^2
 
-// mainBtn.addEventListener("click", onClick)
-// mainBtns.addEventListener("click", onClick)
+const mainBtn = document.querySelector(".main-btn")
+const weight = document.querySelector(".weight")
+const height = document.querySelector(".height")
+const result = document.querySelector(".result")
+const comment = document.querySelector(".comment")
 
-let nbClick = 0
+const BMIData = [
+    { name: "Maigreur", color: "midnightblue", range: [0, 18.5] },
+    { name: "Bonne santé", color: "green", range: [18.5, 25] },
+    { name: "Surpoids", color: "lightcoral", range: [25, 30] },
+    { name: "Obésité modérée", color: "orange", range: [30, 35] },
+    { name: "Obésité sévère", color: "crimson", range: [35, 40] },
+    { name: "Obésité morbide", color: "purple", range: 40 },
+  ]
 
-// BAISSE L'OPACITE A CHAQUE CLIQUE
-// let fullOpacity = 1
-// function onClick (event) {
+mainBtn.addEventListener("click", onClick)
 
-//     nbClick++
-//     if(nbClick > 5) nbClick = 0
-//     event.target.style.opacity = fullOpacity - 0.2 * nbClick
-// }
+function onClick(event) {
+    event.preventDefault()
+    result.textContent = 0
+    personIMC = (weight.value / ((height.value/100) ** 2))
+    result.textContent = personIMC.toFixed(1)
 
-// CHANGE LA COULEUR DE FOND A CHAQUE CLIQUE
-// const colors = ['#00eabf', '#011627', '#e73c7e', '#ee7752']
-
-// function onClick() {
-//     if (nbClick >= colors.length) nbClick = 0
-//     mainContainer.style.backgroundColor = colors[nbClick]
-//     nbClick++
-// }
-
-// CHANGE LA COULEUR DE FOND EN FONCTION DU BOUTON CLIQUE
-// const colors = ["red", "green", "blue"]
-
-// for(let i = 0; i < mainBtns.length; i++) {
-//     mainBtns[i].addEventListener("click", onClick)  
-// }
-
-// function onClick(event) {
-//  mainContainer.style.backgroundColor = event.target.getAttribute("data-color")
-// }
-
-// CHANGE LA COULEUR DE FOND EN FONCTION DE L'IMPUT
-const input = document.querySelector("input")
-
-mainBtns[3].addEventListener("click", onClick)
-
-function onClick() {
-    mainContainers[1].style.backgroundColor = input.value
+    for(i = 0; i < BMIData.length; i++) {
+        if(personIMC > BMIData[i].range[0] && personIMC <= BMIData[i].range[1] || personIMC > BMIData[BMIData.length -1].range) {
+            
+            comment.textContent = BMIData[i].name
+        }
+    
+    }
+    
 }
+
