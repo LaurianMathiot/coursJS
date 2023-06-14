@@ -17,22 +17,63 @@ const BMIData = [
 
 mainBtn.addEventListener("click", onClick)
 
+// function onClick(event) {
+//     event.preventDefault() // Empeche la page de se recharger
+//     const wValue = weight.value
+//     const hValue = height.value
+
+//     result.textContent = 0
+
+//     personIMC = (wValue / ((hValue/100) ** 2))
+//     result.textContent = personIMC.toFixed(1)
+
+
+//     for(i = 0; i < BMIData.length; i++) {
+//         if(personIMC > BMIData[i].range[0] && personIMC <= BMIData[i].range[1] || personIMC >= BMIData[BMIData.length -1].range) {
+            
+//             comment.textContent = BMIData[i].name
+//             result.style.color = BMIData[i].color 
+//             break
+            
+//         }   
+//     }
+// }
+
+// ---------------------- Correction ---------------------- //
+
+
 function onClick(event) {
     event.preventDefault()
-    result.textContent = 0
-    personIMC = (weight.value / ((height.value/100) ** 2))
-    result.textContent = personIMC.toFixed(1)
+    const wValue = weight.value
+    const hValue = height.value
 
-
-    for(i = 0; i < BMIData.length; i++) {
-        if(personIMC > BMIData[i].range[0] && personIMC <= BMIData[i].range[1] || personIMC > BMIData[BMIData.length -1].range) {
-            
-            comment.textContent = BMIData[i].name
-            result.style.color = BMIData[i].color
-            
-        }
-    
+    if(!wValue || !hValue || wValue <= 0 || hValue <= 0) {
+        handleError()
+        return
     }
-    
+
+    const bmi = (wValue / Math.pow((hValue / 100), 2)).toFixed(1)
+    displayResult(bmi)
 }
 
+function displayResult(val) {
+    let rank
+
+    for(let i = 0; i < BMIData.length; i++){
+        if(val >= BMIData[i].range[0] && val < BMIData[i].range[1]){
+            rank = BMIData[i]
+            break
+        } else if (typeof BMIData[i].range === 'number' && val >= BMIData[i].range) {
+            rank = BMIData[i]
+        }
+    }
+
+    result.textContent = val
+    result.style.color = rank.color
+    comment.textContent = rank.name
+}
+
+function handleError() {
+    bmiValue.textContent = "Echec"
+    comment.textContent = "Remplissez correctement le formulaire"
+}
