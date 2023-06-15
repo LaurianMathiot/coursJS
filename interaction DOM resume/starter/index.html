@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cours javascript</title> 
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?Montserrat&display=swap" rel="stylesheet">
+    <script type="module" src="src/main.js"></script>
+</head>
+<body>
+    <div class="h1-container">
+        <h1>Interagir avec le <span>DOM</span></h1>
+    </div>
+    <div class="grid">
+        <div class="exo">
+            <div class="div-to-color-1 colored"></div>
+            <div class="btn-container-1">
+                <button class="btn btn-1">red</button>
+                <button class="btn btn-1">green</button>
+                <button class="btn btn-1">blue</button>
+            </div>
+        </div>
+        <div class="exo">
+            <input type="text" class="input-3">
+            <div class="text-to-display-3 text-to-display">Texte à afficher</div>
+        </div>
+        <div class="exo">
+            <div class="container-dates">
+                <div>
+                    <label for="start">Start date:</label>
+
+                    <input class="input-4" type="date" id="start" name="trip-start"
+                    value="2018-07-22"
+                    min="2018-01-01" max="2018-12-31">
+                </div>
+                <div>
+                <label for="end">End date:</label>
+
+                <input class="input-4" type="date" id="end" name="trip-end"
+                    value="2018-08-22"
+                    min="2018-01-01" max="2018-12-31">
+                </div>
+
+                <div class="text-to-display-4 text-to-display">Trip last : </div>
+            </div>
+        </div>
+        <div class="exo">
+            <form class="form-2">
+                <input type="text" class="input-2">
+                <button class="btn">Ok</button>
+            </form>
+            <div class="text-to-display-2 text-to-display">Texte à afficher</div>
+        </div>
+        <div class="exo">
+            <div class="text-to-display-5 text-to-display">30</div>
+            <input type="range" min="5" max="95" value=30 class="input-5">
+        </div>
+        <div class="exo">
+            <label>
+                <p>Programming language :</p>
+                <select class="select-6" name="language">
+                  <option value="">Select One …</option>
+                  <option value="JS">JS</option>
+                  <option value="Python">Python</option>
+                  <option value="Php">Php</option>
+                </select>
+              </label>
+              
+              <div class="text-to-display-6 text-to-display"> ... </div>
+        </div>
+        <div class="exo">
+            <div class="div-to-color-7 colored"></div>
+            <input type="color" class="input-7">
+        </div>
+        <div class="exo">
+            <div class="div-to-color-8 colored"></div>
+            <div class="btn-container-8">
+                <button class="btn btn-8" data-color="magenta">Salut</button>
+                <button class="btn btn-8" data-color="purple">tout</button>
+                <button class="btn btn-8" data-color="orange">le monde</button>
+            </div>
+        </div>
+        <div class="exo">
+                <legend>Mes intérêts : </legend>
+                <div class="checkbox-container">
+                    <div>
+                      <input class="checkbox" type="checkbox" id="coding" name="interest" value="coding">
+                      <label for="coding">Dev</label>
+                    </div>
+                    <div>
+                      <input class="checkbox" type="checkbox" id="music" name="interest" value="music">
+                      <label for="music">Music</label>
+                    </div>
+                </div>
+                <div class="text-to-display-9 text-to-display"> ... </div>
+        </div>
+    </div>
+</body>
+</html>
