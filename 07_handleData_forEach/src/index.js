@@ -75,16 +75,37 @@ console.log(games[games.length - 1].title)
 
 // 4. Ecrire une fonction qui prend en parametre une console et un tableau (games), et qui retourne un nouveau tableau de tous les jeux disponibles sur cette console
 
+// const GamesOnDevice = (device, arr) => {
+//   let gameTitle4 = []
+
+//   arr.forEach(element4 => {
+//     if (element4.devices.includes(device)) {
+//         gameTitle4.push(element4.title)
+//     }
+//   })
+
+//   return gameTitle4
+// }
+
+// console.log(GamesOnDevice("PC", games))
+
+
+
+// Variante exo 4, en prenant qu'une partie du nom de la console
+
 const GamesOnDevice = (device, arr) => {
   let gameTitle4 = []
 
   arr.forEach(element4 => {
-    if (element4.devices.includes(device)) {
+    for (let i = 0; i < element4.devices.length; i++) {
+      const element = element4.devices[i];
+      if(element.includes(device)){
         gameTitle4.push(element4.title)
+      }      
     }
   })
 
   return gameTitle4
 }
 
-console.log(GamesOnDevice("Xbox One", games))
+console.log(GamesOnDevice("One", games))
