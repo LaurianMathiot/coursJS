@@ -82,13 +82,14 @@ body {
     height: var(--img-height);
     object-fit: fill;
     position: absolute;
-    transition-property: left;
-    transition-duration: 3s;
+    transition-property: transform;
+    transition-duration: 2s;
     user-select: none;
 }
 
 .slider-frame {
     position: relative;
+    margin-bottom: 20px;
 }
 
 .slider-img-container {
@@ -146,4 +147,19 @@ body {
     font-size: 22px;
     padding: 8px 10px;
     user-select: none;
+}
+
+.dots-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50px;
+    background-color: var(--primaryColor);
+    margin: 4px;
+    cursor: pointer;
 }
