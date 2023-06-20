@@ -1,0 +1,46 @@
+* {
+  list-style-type: none;
+  text-decoration: none !important;
+  font-family: "Lato";
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+:root {
+  --padding-btn : 10px 15px;
+  --border-btn : 1px solid grey;
+
+}
+
+body {
+
+}
+
+/* NAV */
+
+nav {
+  padding: 10px 20px !important;
+}
+
+nav .btn, select {
+  padding: var(--padding-btn) !important;
+  border: var(--border-btn)
+}
+
+
+.btn-group {
+  width: 40vw !important;
+}
+
+.form-select {
+  width: 15vw !important;
+}
+
+/* CARDS */
+
+.shopping-list {
+  padding: 2vh 5vw !important;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3vw;
+}
