@@ -8,18 +8,32 @@
 
 :root {
   --padding-btn : 10px 15px;
-  --border-btn : 1px solid grey;
+  --border-btn : 1px solid rgb(207, 207, 207);
+  --primaryColor : rgb(244, 244, 244);
+  --secondaryColor : #0d6efd;
+  --tertiaryColor : rgb(207, 207, 207);
 
 }
 
 body {
-
+  background-color: var(--primaryColor) !important;
 }
 
 /* NAV */
 
 nav {
-  padding: 10px 20px !important;
+  background-color: black !important;
+  position: fixed !important;
+  z-index: 9;
+  width: 100vw;
+}
+
+nav .container-fluid {
+  padding: 0 20px !important;
+}
+
+.navbar-brand {
+  color: var(--primaryColor) !important;
 }
 
 nav .btn, select {
@@ -27,9 +41,16 @@ nav .btn, select {
   border: var(--border-btn)
 }
 
+nav .btn:hover {
+  background-color: var(--secondaryColor) !important;
+  border: 1px solid var(--secondaryColor) !important;
+  color: white !important;
+}
+
 
 .btn-group {
-  width: 40vw !important;
+  width: 50vw !important;
+  background-color: white !important;
 }
 
 .form-select {
@@ -39,8 +60,19 @@ nav .btn, select {
 /* CARDS */
 
 .shopping-list {
-  padding: 2vh 5vw !important;
+  padding: 100px 5vw 2vh!important;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 3vw;
+  gap: 1.5vw;
+}
+
+.card > div >:first-child {
+  margin-right: 10px !important;
+  object-fit: contain;
+}
+
+.card {
+  background: linear-gradient(150deg, white 20%, var(--primaryColor)) !important;
+  border: none !important;
+  box-shadow: 0 0 25px var(--tertiaryColor);
 }
