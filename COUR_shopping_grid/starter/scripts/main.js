@@ -19,21 +19,37 @@ async function fetchData() {
 }
 
 
-function createCard(data) {
+function createCard(arr) {
     section.textContent = ""
 
-    data.forEach((element) => {
+    arr.forEach((element) => {
     let card = document.createElement(`div`)
+    
+    let rateStars = buildStars(element.rating.rate)
 
     card.innerHTML =    `<div class="card p-3">
                             <div class="d-flex flex-row mb-3"><img src="${element.image}" width="70">
-                            <div class="d-flex flex-column ml-2"><span>${element.title}</span><span class="text-black-50">${element.category}</span><span class="ratings"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+                            <div class="d-flex flex-column ml-2"><span>${element.title}</span><span class="text-black-50">${element.category}</span><span class="ratings">${rateStars} ${element.rating.rate}</span>
                             </div>
                             </div>
-                            <h6>${element.description.slice(0-120)} ...</h6>
+                            <h6>${element.description}</h6>
                             <div class="d-flex justify-content-between install mt-3"><span>${element.price} €</span><span class="text-primary">En savoir plus&nbsp;<i class="fa fa-angle-right"></i></span></div>
                         </div>`
     
     section.appendChild(card)
     })
 }
+
+function buildStars(rate) {
+    let result = ''
+
+    for (let i = 0; i < Math.round(rate); i++) {
+        result += `<i class="fa-solid fa-star"></i>`
+    }
+    
+    for (let i = 0; i < 5 - Math.round(rate); i++) {
+        result += `<i class="fa-regular fa-star"></i>`
+    }
+
+    return result
+    }

@@ -76,3 +76,7 @@ nav .btn:hover {
   border: none !important;
   box-shadow: 0 0 25px var(--tertiaryColor);
 }
+
+.ratings {
+  color: var(--secondaryColor) !important;
+}
